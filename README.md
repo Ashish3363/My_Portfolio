@@ -134,4 +134,4 @@ The global scroll progress drives:
 - **hue** — shifts from cyan toward violet as you descend the page.
 
 If a visitor has `prefers-reduced-motion` set, animations are reduced
-automatically (see `index.css`).
+automatically (see `index.css`)...
