@@ -10,7 +10,7 @@ function ProjectCard({ p, i }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.6, delay: i * 0.08 }}
-      className="group relative glass rounded-2xl p-6 overflow-hidden hover:border-white/25 transition"
+      className="group relative glass lift-card rounded-2xl p-6 overflow-hidden"
     >
       <div
         className={`absolute -top-24 -right-24 w-48 h-48 rounded-full bg-gradient-to-br ${p.accent} opacity-25 blur-3xl group-hover:opacity-40 transition`}

@@ -26,7 +26,7 @@ export default function Achievements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative glass rounded-2xl p-6 group hover:border-white/25 transition block"
+                className="relative glass lift-card rounded-2xl p-6 group block"
               >
                 <div className="flex items-center gap-3">
                   <span className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/30 to-fuchsia-500/30 border border-white/10 group-hover:scale-105 transition">

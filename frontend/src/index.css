@@ -46,6 +46,16 @@ body {
   .glass {
     @apply bg-white/[0.03] backdrop-blur-md border border-white/10;
   }
+  /* Apply to any card that should "pop" on hover. Adds a gentle lift,
+     scale, brighter border, brighter inner background, and a strong
+     cyan→violet glow that bleeds beyond the card edges. */
+  .lift-card {
+    @apply transition-all duration-300 ease-out will-change-transform
+           hover:-translate-y-1.5 hover:scale-[1.015]
+           hover:border-white/35
+           hover:bg-white/[0.06]
+           hover:shadow-[0_30px_80px_-10px_rgba(6,182,212,0.55),0_0_70px_-5px_rgba(139,92,246,0.50)];
+  }
   .neon-text {
     background: linear-gradient(90deg, #5fd6ff, #a78bfa, #5fd6ff);
     background-size: 200% auto;

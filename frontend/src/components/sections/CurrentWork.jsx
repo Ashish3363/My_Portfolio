@@ -18,7 +18,7 @@ export default function CurrentWork() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="relative glass rounded-3xl p-8 md:p-10 overflow-hidden"
+          className="relative glass lift-card rounded-3xl p-8 md:p-10 overflow-hidden"
         >
           {/* Decorative scanlines + glow */}
           <div className="pointer-events-none absolute inset-0 opacity-30">
