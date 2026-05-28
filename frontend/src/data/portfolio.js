@@ -16,7 +16,7 @@ export const profile = {
 
 export const about = {
   heading: 'Who am I?',
-  body: `I'm Ashish Kumar, currently working as an FullStack Intern at ARTPARK, IISc Bangalore, contributing to Project S.H.I.E.L.D., with a strong background in full-stack development, AI systems, and scalable application development.`,
+  body: `I'm Ashish Kumar, currently working as an FullStack Intern at ARTPARK, IISc Bangalore, contributing to Project - an Early Warning System for Vector Borne Disease, with a strong background in full-stack development, AI systems, and scalable application development.`,
   pillars: [
     'AI / ML',
     'Backend architecture',
@@ -39,8 +39,8 @@ export const about = {
 };
 
 export const currentWork = {
-  title: 'Dengue Analytics Dashboard - ARTPARK @ IISC Bangalore',
-  subtitle: 'Real-time disease surveillance for public health.',
+  title: 'Early Warning System for Vector Borne Disease - ARTPARK @ IISC Bangalore',
+  subtitle: 'Real-time vector borne disease surveillance for public health.',
   description:
     'Building a real-time disease surveillance platform that helps track dengue outbreaks and supports public health decisions across India.',
   highlights: [
@@ -72,6 +72,7 @@ export const projects = [
     ],
     stack: ['YOLO', 'FastAPI', 'React', 'MongoDB'],
     accent: 'from-cyan-500 to-blue-600',
+    link: 'https://github.com/Ashish3363/IDTIE-Monitoring-System-Frontend',
   },
   {
     id: 'jarvis',
@@ -87,6 +88,7 @@ export const projects = [
     ],
     stack: ['Ollama', 'TinyLlama', 'Pinecone', 'Python'],
     accent: 'from-violet-500 to-fuchsia-600',
+    link: 'https://github.com/Ashish3363/JARVIS---Personal-AI-Assistant',
   },
   {
     id: 'qpaper',
@@ -102,6 +104,7 @@ export const projects = [
     ],
     stack: ['Python', 'NLP', 'MongoDB', 'TinyLlama'],
     accent: 'from-emerald-500 to-teal-600',
+    link: 'https://github.com/Ashish3363/Smart_Question_Paper_Generator',
   },
   {
     id: 'live-transcript',
@@ -117,6 +120,7 @@ export const projects = [
     ],
     stack: ['JavaScript', 'Web Speech API', 'React'],
     accent: 'from-amber-500 to-orange-600',
+    link: 'https://github.com/Ashish3363/LiveScribe',
   },
 ];
 
@@ -149,7 +153,7 @@ export const skills = [
   },
   {
     group: 'Backend',
-    items: ['Node.js', 'REST APIs', 'FastAPI'],
+    items: [ 'REST APIs', 'FastAPI'],
   },
   {
     group: 'Frontend',

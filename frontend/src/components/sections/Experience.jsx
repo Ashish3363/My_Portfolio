@@ -9,7 +9,7 @@ export default function Experience() {
       <div className="max-w-5xl mx-auto">
         <SectionHeader
           // eyebrow="04 — Experience"
-          title="The brain splits open. Timeline emerges."
+          title="Internship"
         />
 
         <ol className="relative border-l border-white/15 pl-8 space-y-8 max-w-3xl mx-auto">
