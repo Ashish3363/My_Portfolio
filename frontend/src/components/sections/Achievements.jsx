@@ -9,8 +9,8 @@ export default function Achievements() {
       <div className="max-w-5xl mx-auto">
         <SectionHeader
           // eyebrow="06 — Achievement Vault"
-          title="Hidden neurons unlock."
-          subtitle="Certifications and badges, earned along the way."
+          title="Certifications"
+          // subtitle="Certifications and badges, earned along the way."
         />
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
           {achievements.map((a, i) => {

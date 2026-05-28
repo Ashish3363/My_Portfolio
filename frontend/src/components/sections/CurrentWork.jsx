@@ -9,8 +9,8 @@ export default function CurrentWork() {
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           // eyebrow="02 — Now"
-          title="The brain cracks open."
-          subtitle="A holographic dashboard emerges."
+          title="My Experience."
+          // subtitle="A holographic dashboard emerges."
         />
 
         <motion.div
@@ -28,7 +28,7 @@ export default function CurrentWork() {
           <div className="pointer-events-none absolute -bottom-40 -left-40 w-[420px] h-[420px] rounded-full bg-synapse-500/20 blur-3xl" />
 
           <div className="relative">
-            <p className="section-label">// Current real-world work</p>
+            <p className="section-label">// Currently working on </p>
             <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold">
               {currentWork.title}
             </h3>

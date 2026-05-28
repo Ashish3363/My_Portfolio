@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Github, ExternalLink } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader.jsx';
 import { projects } from '../../data/portfolio.js';
 
@@ -17,7 +17,7 @@ function ProjectCard({ p, i }) {
       />
       <div className="relative">
         <div className="flex items-center gap-2">
-          <Sparkles size={14} className="text-neural-300" />
+          {/* <Sparkles size={14} className="text-neural-300" /> */}
           <span className="section-label">project · {String(i + 1).padStart(2, '0')}</span>
         </div>
         <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight">
@@ -43,6 +43,22 @@ function ProjectCard({ p, i }) {
         </div>
 
         <p className="mt-6 italic text-neural-50/90 text-sm">"{p.tagline}"</p>
+
+        {p.link && (
+          <a
+            href={p.link}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-xs font-mono text-neural-300 hover:text-white transition"
+          >
+            {p.link.includes('github.com') ? (
+              <Github size={14} />
+            ) : (
+              <ExternalLink size={14} />
+            )}
+            View on {p.link.includes('github.com') ? 'GitHub' : 'site'}
+          </a>
+        )}
       </div>
     </motion.article>
   );
@@ -54,8 +70,8 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           // eyebrow="03 — AI Projects Lab"
-          title="Project cards float out like memories."
-          subtitle="Each one is a working system — built, debugged, and shipped."
+          title="My Projects"
+          subtitle="Built, debugged, and shipped."
         />
 
         <div className="grid md:grid-cols-2 gap-6">

@@ -68,7 +68,7 @@ export default function Contact() {
         <SectionHeader
           // eyebrow="07 — Contact Portal"
           title="Let's build intelligent systems together."
-          subtitle="The brain becomes pure light."
+          // subtitle="The brain becomes pure light."
         />
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -121,7 +121,7 @@ export default function Contact() {
             </div>
 
             <p className="mt-10 text-center italic text-neural-50/80 text-sm">
-              "This is not just a portfolio. This is how my mind builds the future."
+              {/* "This is not just a portfolio. This is how my mind builds the future." */}
             </p>
           </motion.div>
 

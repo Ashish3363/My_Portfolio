@@ -8,8 +8,8 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           // eyebrow="05 — Neural Network"
-          title="Skills, as a network of nodes."
-          subtitle="Brain transforms into floating neurons."
+          title="Skills"
+          // subtitle="Brain transforms into floating neurons."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
