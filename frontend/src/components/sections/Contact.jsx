@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, FileDown, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader.jsx';
 import { profile } from '../../data/portfolio.js';
 
@@ -108,6 +108,15 @@ export default function Contact() {
               >
                 <Linkedin size={18} className="text-neural-300" />
                 <span className="font-mono text-sm">LinkedIn</span>
+              </a>
+              <a
+                href={profile.resume}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 p-3 rounded-xl border border-white/10 hover:border-white/30 hover:bg-white/[0.04] transition"
+              >
+                <FileDown size={18} className="text-neural-300" />
+                <span className="font-mono text-sm">Resume</span>
               </a>
             </div>
 

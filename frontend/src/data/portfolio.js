@@ -3,20 +3,20 @@
 
 export const profile = {
   name: 'Ashish Kumar',
-  roles: [ 'Full Stack Developer','AI Engineer', 'Problem Solver'],
+  roles: [ 'Full Stack Developer', 'Problem Solver'],
   tagline:
-    'Building intelligent systems that solve real-world problems — from healthcare analytics to AI assistants.',
+    'Building intelligent systems that solve real-world problems',
   intro:
     'Computer Science postgraduate passionate about AI, scalable systems, and full-stack development. I build products where intelligence meets real-world impact.',
   email: 'ashishsingh3363@gmail.com',
   github: 'https://github.com/Ashish3363',
   linkedin: 'https://www.linkedin.com/in/ashish-kumar-772797231/',
-  resume: '/resume.pdf',
+  resume: 'https://drive.google.com/file/d/1OW52bkKFJ2_YO2OhmN65LTm5ubJwgAml/view?usp=sharing',
 };
 
 export const about = {
   heading: 'Who am I?',
-  body: `I'm Ashish Kumar, currently working as an Intern at ARTPARK, IISc Bangalore, contributing to Project S.H.I.E.L.D., with a strong background in full-stack development, AI systems, and scalable application development.`,
+  body: `I'm Ashish Kumar, currently working as an FullStack Intern at ARTPARK, IISc Bangalore, contributing to Project S.H.I.E.L.D., with a strong background in full-stack development, AI systems, and scalable application development.`,
   pillars: [
     'AI / ML',
     'Backend architecture',
