@@ -20,7 +20,7 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative glass rounded-2xl p-6"
+              className="relative glass lift-card rounded-2xl p-6"
             >
               <span className="absolute -left-[44px] top-6 grid place-items-center w-8 h-8 rounded-full bg-gradient-to-br from-neural-500 to-synapse-500 shadow-[0_0_18px_-2px_rgba(6,182,212,0.6)]">
                 <Briefcase size={14} />

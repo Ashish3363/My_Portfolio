@@ -19,7 +19,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 glass rounded-2xl p-8"
+            className="lg:col-span-3 glass lift-card rounded-2xl p-8"
           >
             <p className="text-neural-100/90 leading-relaxed">{about.body}</p>
 

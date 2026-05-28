@@ -77,7 +77,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6 }}
-            className="glass rounded-2xl p-8"
+            className="glass lift-card rounded-2xl p-8"
           >
             <h3 className="font-display text-xl font-semibold mb-1">Reach out</h3>
             <p className="text-sm text-neural-100/70">
@@ -131,7 +131,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="glass rounded-2xl p-8 flex flex-col gap-4"
+            className="glass lift-card rounded-2xl p-8 flex flex-col gap-4"
           >
             <label className="block">
               <span className="section-label">Your name</span>
