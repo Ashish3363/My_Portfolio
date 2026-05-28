@@ -72,7 +72,7 @@ export default function Hero() {
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <a href="#about" className="btn-primary">
-            Explore My Brain <ArrowRight size={18} />
+            Explore Me <ArrowRight size={18} />
           </a>
           <a href="#projects" className="btn-ghost">
             See projects
