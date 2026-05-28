@@ -1,46 +1,26 @@
-import Brain from '../Brain/Brain.jsx';
+import MilkyWay from '../MilkyWay/MilkyWay.jsx';
 
 /**
- * Fixed full-viewport backdrop. Layers (back → front):
- *   1. Solid ink color
- *   2. Static brain image (drop your own at /public/brain-bg.jpg or .png)
- *   3. Subtle grid lines
- *   4. The 3D brain canvas (rotates, opens, hue-shifts with scroll)
- *   5. Gradient veil that keeps text readable on top
+ * Fixed full-viewport scene backdrop.
  *
- * `progress` (0..1) is global scroll progress and drives openness + hue.
+ * Layers (back → front):
+ *   1. Solid ink color
+ *   2. Subtle grid lines (very faint)
+ *   3. Milky Way galaxy with continuous forward motion + warp streaks
+ *   4. Light gradient veil to preserve text legibility
+ *      (kept lighter than before so the galaxy reads bright)
  */
+// eslint-disable-next-line no-unused-vars
 export default function BrainBackdrop({ progress }) {
-  const hue = 0.55 + progress * 0.2;
-
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* Static brain image — drop your file at frontend/public/brain-bg.jpg */}
-      <img
-        src="/brain-bg.jpg"
-        alt=""
-        aria-hidden="true"
-        onError={(e) => {
-          // hide cleanly if the image isn't there yet
-          e.currentTarget.style.display = 'none';
-        }}
-        className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen scale-110 blur-[2px]"
-        style={{
-          filter:
-            'brightness(0.9) contrast(1.05) hue-rotate(180deg) saturate(1.1)',
-        }}
-      />
+      <div className="absolute inset-0 grid-bg opacity-15" />
 
-      {/* Subtle grid */}
-      <div className="absolute inset-0 grid-bg opacity-30" />
-
-      {/* 3D rotating brain on top of the image */}
       <div className="absolute inset-0">
-        <Brain openness={progress} hue={hue} />
+        <MilkyWay />
       </div>
 
-      {/* Gradient veil to keep page text legible */}
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/55 to-ink/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/10 via-ink/30 to-ink/70" />
     </div>
   );
 }
