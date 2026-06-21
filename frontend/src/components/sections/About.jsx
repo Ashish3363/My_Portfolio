@@ -10,7 +10,6 @@ export default function About() {
         <SectionHeader
           // eyebrow="01 — About"
           title={about.heading}
-          // subtitle="Brain rotates left. Neural pathways glow."
         />
 
         <div className="grid lg:grid-cols-5 gap-10 items-start">

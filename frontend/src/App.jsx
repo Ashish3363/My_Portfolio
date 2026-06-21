@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import Nav from './components/layout/Nav.jsx';
-import BrainBackdrop from './components/layout/BrainBackdrop.jsx';
+import SpaceBackdrop from './components/layout/SpaceBackdrop.jsx';
 import Hero from './components/sections/Hero.jsx';
 import About from './components/sections/About.jsx';
 import CurrentWork from './components/sections/CurrentWork.jsx';
@@ -12,22 +11,9 @@ import Contact from './components/sections/Contact.jsx';
 import Footer from './components/layout/Footer.jsx';
 
 export default function App() {
-  // Global scroll progress (0..1) drives "brain openness" in the backdrop.
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
     <div className="relative">
-      <BrainBackdrop progress={progress} />
+      <SpaceBackdrop />
       <Nav />
       <main className="relative z-10">
         <Hero />

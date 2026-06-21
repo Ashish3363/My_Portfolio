@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Github, Linkedin, FileDown, Send, CheckCircle2, AlertCircle } from 'lucide-react';
@@ -19,8 +20,10 @@ export default function Contact() {
       return;
     }
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
-    if (!accessKey) {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (!serviceId || !templateId || !publicKey) {
       setStatus({
         state: 'error',
         msg: 'Contact form is not configured yet. Please email me directly.',
@@ -30,25 +33,16 @@ export default function Contact() {
 
     setStatus({ state: 'loading', msg: '' });
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `Portfolio contact from ${form.name}`,
-          from_name: 'Ashish Portfolio',
-          name: form.name,
-          email: form.email,
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: form.name,
+          from_email: form.email,
           message: form.message,
-        }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || 'Delivery failed');
-      }
+        },
+        { publicKey }
+      );
       setStatus({
         state: 'success',
         msg: 'Message sent. I will get back to you soon.',
@@ -68,7 +62,6 @@ export default function Contact() {
         <SectionHeader
           // eyebrow="07 — Contact Portal"
           title="Let's build intelligent systems together."
-          // subtitle="The brain becomes pure light."
         />
 
         <div className="grid lg:grid-cols-2 gap-8">
