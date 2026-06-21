@@ -16,7 +16,7 @@ export const profile = {
 
 export const about = {
   heading: 'About Me?',
-  body: `I'm Ashish Kumar, currently working as an FullStack Developer Intern at ARTPARK, IISc Bangalore, contributing to Project - an Early Warning System for Vector Borne Disease, with a strong background in full-stack development, AI systems, and scalable application development.`,
+  body: `Hi i'm Ashish Kumar, currently working as an FullStack Developer Intern at ARTPARK, IISc Bangalore, contributing to Project - an Early Warning System for Vector Borne Disease, with a strong background in full-stack development, AI systems, and scalable application development.`,
   pillars: [
     'AI / ML',
     'Backend architecture',

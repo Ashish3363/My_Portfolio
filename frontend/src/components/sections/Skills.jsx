@@ -9,7 +9,6 @@ export default function Skills() {
         <SectionHeader
           // eyebrow="05 — Neural Network"
           title="Skills"
-          // subtitle="Brain transforms into floating neurons."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
