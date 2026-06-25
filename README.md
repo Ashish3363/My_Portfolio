@@ -1,11 +1,12 @@
-# Ashish Kumar — Enter My Mind
+# Ashish Kumar — Portfolio
 
-A cinematic, scroll-driven portfolio. A 3D brain rotates and "opens" as you
-scroll, revealing a holographic dashboard, project cards as memories, a
-neural-network of skills, and finally a contact portal.
+A scroll-driven personal portfolio with an animated backdrop, project
+cards, a skills section, and a contact form that emails me directly.
 
 - **Frontend:** React + Vite + Tailwind + Framer Motion + react-three-fiber
-- **Backend:** FastAPI (contact form endpoint, CORS, optional SMTP relay)
+- **Contact form:** [EmailJS](https://www.emailjs.com) (client-side, no backend required)
+- **Backend (optional):** FastAPI service, included if you want to handle
+  submissions yourself
 
 ---
 
@@ -13,14 +14,13 @@ neural-network of skills, and finally a contact portal.
 
 ```
 portfolio/
-├── frontend/                  React + Vite app (the cinematic UI)
+├── frontend/                  React + Vite app
 │   ├── public/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Brain/         3D brain (react-three-fiber)
-│   │   │   ├── layout/        Nav, Footer, BrainBackdrop
-│   │   │   ├── sections/      Hero, About, CurrentWork, Projects, …
-│   │   │   └── ui/            Shared UI bits (SectionHeader)
+│   │   │   ├── layout/         Nav, Footer, Backdrop
+│   │   │   ├── sections/       Hero, About, CurrentWork, Projects, …
+│   │   │   └── ui/             Shared UI bits (SectionHeader)
 │   │   ├── data/portfolio.js  Single source of truth for content
 │   │   ├── App.jsx
 │   │   ├── main.jsx
@@ -31,7 +31,7 @@ portfolio/
 │   ├── tailwind.config.js
 │   └── postcss.config.js
 │
-├── backend/                   FastAPI service
+├── backend/                   FastAPI service (optional)
 │   ├── app/
 │   │   ├── main.py            App + CORS + router wiring
 │   │   ├── config.py          Settings (env-driven)
@@ -55,37 +55,59 @@ portfolio/
 cd frontend
 npm install
 copy .env.example .env
-# edit .env and paste your Web3Forms key (see "Contact form" below)
+# edit .env and paste your EmailJS credentials (see "Contact form" below)
 npm run dev
 ```
 
 Vite serves on http://localhost:5173.
 
-### 2. Contact form (Web3Forms — no backend required)
+### 2. Contact form (EmailJS — no backend required)
 
-The contact form delivers email straight to **ashishsingh3363@gmail.com**
-via [Web3Forms](https://web3forms.com), so the site can be deployed as a
+The contact form delivers email straight to your inbox via
+[EmailJS](https://www.emailjs.com), so the site can be deployed as a
 pure static build.
 
-1. Visit https://web3forms.com.
-2. Enter `ashishsingh3363@gmail.com` and click **Create Access Key**.
-3. Confirm the email Web3Forms sends you.
-4. Paste the key into `frontend/.env`:
+**Setup:**
+
+1. Create a free account at https://www.emailjs.com.
+2. **Add an email service** (Email Services → Add New Service) and connect
+   the inbox that should receive messages. Note the **Service ID**
+   (e.g. `service_xxxxxxx`).
+3. **Create an email template** (Email Templates → Create New Template).
+   The template must reference these variables, which the form sends:
+
+   | Variable        | Value sent          |
+   | --------------- | ------------------- |
+   | `{{from_name}}`  | Visitor's name      |
+   | `{{from_email}}` | Visitor's email     |
+   | `{{message}}`    | The message body    |
+
+   Set the template's **Reply-To** field to `{{from_email}}` so you can
+   reply to senders directly. Note the **Template ID** (e.g. `template_xxxxxxx`).
+4. Copy your **Public Key** from Account → General.
+5. Paste all three into `frontend/.env`:
 
    ```env
-   VITE_WEB3FORMS_KEY=your-access-key-here
+   VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
+   VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+   VITE_EMAILJS_PUBLIC_KEY=your-public-key
    ```
 
-5. Restart `npm run dev` so Vite picks up the new env var.
+6. Restart `npm run dev` so Vite picks up the new env vars.
 
-If `VITE_WEB3FORMS_KEY` is missing, the form shows a friendly error
-asking the visitor to email directly.
+If any of the three variables are missing, the form shows a friendly
+error asking the visitor to email directly.
+
+> **Note:** These values are exposed in the client bundle by design —
+> that's how EmailJS works. To prevent abuse, restrict the public key to
+> your domain(s) in the EmailJS dashboard (Account → Security → Allowed
+> Origins).
 
 ### 3. Backend (optional)
 
 A FastAPI service is included if you ever want to handle submissions
 yourself (logging, rate-limiting, your own SMTP, etc.). It is **not
-required** for the contact form — Web3Forms covers that.
+required** for the contact form — EmailJS covers that.
 
 ```powershell
 cd backend
@@ -114,24 +136,6 @@ npm run build
 ```
 
 Outputs static assets to `frontend/dist/`. Deploy that folder anywhere
-(Netlify, Vercel, GitHub Pages, S3+CloudFront). Set the
-`VITE_WEB3FORMS_KEY` env var in your hosting provider's dashboard so
-the contact form works in production — no separate backend needed.
-
----
-
-## Notes on the 3D brain
-
-The brain is procedurally generated — a noisy icosahedron rendered as a
-glowing inner shell + cyan wireframe + a particle field of "neurons."
-There's no GLB model to ship, so the bundle stays small and the page
-renders fast everywhere.
-
-The global scroll progress drives:
-
-- **openness** — the wireframe scales outward, the emissive intensity
-  climbs, and the particles get more energetic.
-- **hue** — shifts from cyan toward violet as you descend the page.
-
-If a visitor has `prefers-reduced-motion` set, animations are reduced
-automatically (see `index.css`)...
+(Netlify, Vercel, GitHub Pages, S3+CloudFront). Set the three
+`VITE_EMAILJS_*` env vars in your hosting provider's dashboard so the
+contact form works in production — no separate backend needed.
