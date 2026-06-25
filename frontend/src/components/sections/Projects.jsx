@@ -44,21 +44,34 @@ function ProjectCard({ p, i }) {
 
         <p className="mt-6 italic text-neural-50/90 text-sm">"{p.tagline}"</p>
 
-        {p.link && (
-          <a
-            href={p.link}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-flex items-center gap-2 text-xs font-mono text-neural-300 hover:text-white transition"
-          >
-            {p.link.includes('github.com') ? (
-              <Github size={14} />
-            ) : (
+        <div className="mt-5 flex flex-wrap items-center gap-5">
+          {p.link && (
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-mono text-neural-300 hover:text-white transition"
+            >
+              {p.link.includes('github.com') ? (
+                <Github size={14} />
+              ) : (
+                <ExternalLink size={14} />
+              )}
+              View on {p.link.includes('github.com') ? 'GitHub' : 'site'}
+            </a>
+          )}
+          {p.demo && (
+            <a
+              href={p.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-mono text-neural-300 hover:text-white transition"
+            >
               <ExternalLink size={14} />
-            )}
-            View on {p.link.includes('github.com') ? 'GitHub' : 'site'}
-          </a>
-        )}
+              Go and Visit
+            </a>
+          )}
+        </div>
       </div>
     </motion.article>
   );

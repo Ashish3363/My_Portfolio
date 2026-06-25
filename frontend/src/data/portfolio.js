@@ -11,7 +11,7 @@ export const profile = {
   email: 'ashishsingh3363@gmail.com',
   github: 'https://github.com/Ashish3363',
   linkedin: 'https://www.linkedin.com/in/ashish-kumar-772797231/',
-  resume: 'https://drive.google.com/file/d/1OW52bkKFJ2_YO2OhmN65LTm5ubJwgAml/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/1gaQUnCDsnVyKrKUS19Xqg5AAuwZzFK4y/view?usp=sharing',
 };
 
 export const about = {
@@ -59,6 +59,23 @@ export const currentWork = {
 
 export const projects = [
   {
+    id: 'connect-me',
+    title: 'Connect Me ',
+    blurb:
+      'Designed and deployed a real-time hyperlocal chat platform where users discover and join location-based rooms to talk with people physically nearby, with proximity-gated private messaging.',
+    tagline: 'Conversations with people right around you.',
+    bullets: [
+      'Location-based room discovery (1 km radius)',
+      'Real-time group chat over WebSockets',
+      'Proximity-gated private messaging',
+      'Redis pub/sub, rate limiting & 24h auto-expiry',
+    ],
+    stack: ['React', 'FastAPI', 'PostgreSQL', 'PostGIS', 'Redis', 'WebSockets'],
+    accent: 'from-rose-500 to-pink-600',
+    link: 'https://github.com/Ashish3363/Connect_Me',
+    demo: 'https://connect-me-wine.vercel.app/',
+  },
+  {
     id: 'id-tie',
     title: 'ID-TIE Monitor System',
     blurb:
@@ -89,22 +106,6 @@ export const projects = [
     stack: ['Ollama', 'TinyLlama', 'Pinecone', 'Python'],
     accent: 'from-violet-500 to-fuchsia-600',
     link: 'https://github.com/Ashish3363/JARVIS---Personal-AI-Assistant',
-  },
-  {
-    id: 'qpaper',
-    title: 'AI Smart Question Paper Generator',
-    blurb:
-      'AI system trained on syllabus and previous papers to generate custom question papers with difficulty and topic control.',
-    tagline: 'Exams, generated with intelligence.',
-    bullets: [
-      'Custom question papers',
-      'Difficulty control',
-      'Topic filtering',
-      'NLP-based generation',
-    ],
-    stack: ['Python', 'NLP', 'MongoDB', 'TinyLlama'],
-    accent: 'from-emerald-500 to-teal-600',
-    link: 'https://github.com/Ashish3363/Smart_Question_Paper_Generator',
   },
   {
     id: 'live-transcript',
