@@ -3,7 +3,7 @@
 
 export const profile = {
   name: 'Ashish Kumar',
-  roles: [ 'Full Stack Developer', 'Problem Solver'],
+  roles: ['Full Stack Developer', 'Problem Solver'],
   tagline:
     'Building intelligent systems that solve real-world problems',
   intro:
@@ -11,7 +11,7 @@ export const profile = {
   email: 'ashishsingh3363@gmail.com',
   github: 'https://github.com/Ashish3363',
   linkedin: 'https://www.linkedin.com/in/ashish-kumar-772797231/',
-  resume: 'https://drive.google.com/file/d/1gaQUnCDsnVyKrKUS19Xqg5AAuwZzFK4y/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/1-2PbaNrSOuHHRNAsxdMlgJPFJR9sDQyJ/view?usp=sharing',
 };
 
 export const about = {
@@ -39,10 +39,10 @@ export const about = {
 };
 
 export const currentWork = {
-  title: 'Early Warning System for Vector Borne Disease - ARTPARK @ IISC Bangalore',
-  subtitle: 'Real-time vector borne disease surveillance for public health.',
+  title: 'ARTPARK @ IISC Bangalore',
+  subtitle: 'Early Warning System for Vector Borne Disease ',
   description:
-    'Building a real-time disease surveillance platform that helps track dengue outbreaks and supports public health decisions across India.',
+    'Building and deploying a real-time disease surveillance and prediction platform for dengue outbreak monitoring and public health decision-making. Deployed across Andhra Pradesh, Odisha, and Karnataka, with region-level analysis from state to district, mandal/block, and ward levels. Integrated IHIP surveillance data, weather/rainfall data, and ML-based forecasting to identify trends, emerging outbreaks, hotspots, and future case risks. Developed interactive dashboards with maps, disease trends, forecasts, risk indicators, and actionable insights for public health teams. Implemented Mixpanel analytics throughout the platform to track user behavior, sessions, page views, filters, roles, and dashboard usage.',
   highlights: [
     'Hotspot Detection System',
     'Outbreak Prediction Module',
@@ -52,8 +52,9 @@ export const currentWork = {
     'Frontend ↔ Backend integration',
     'Query optimization',
     'Bug fixing & debugging',
+    'Mixpanel Integration for Analytics',
   ],
-  stack: ['FastAPI', 'React', 'PostgreSQL', 'GitHub'],
+  stack: ['FastAPI', 'React.js', 'Docker', 'PostgreSQL', 'GitHub', 'Mixpanel'],
   tagline: 'Using technology to fight real-world healthcare challenges.',
 };
 
@@ -146,27 +147,31 @@ export const experience = [
 export const skills = [
   {
     group: 'Programming',
-    items: ['Java', 'Python', 'JavaScript', 'SQL'],
+    items: ['Java', 'Python', 'JavaScript'],
   },
-  {
-    group: 'AI / ML',
-    items: ['NumPy', 'Pandas', 'Scikit-learn', 'NLP', 'Computer Vision'],
-  },
+  // {
+  //   group: 'AI / ML',
+  //   items: ['NumPy', 'Pandas', 'Scikit-learn', 'NLP', 'Computer Vision'],
+  // },
   {
     group: 'Backend',
-    items: [ 'REST APIs', 'FastAPI'],
+    items: ['REST APIs', 'FastAPI', "Node.js"],
   },
   {
     group: 'Frontend',
-    items: ['React', 'JavaScript', 'HTML/CSS'],
+    items: ['React.js', 'Next.js'],
   },
   {
     group: 'Database',
-    items: ['MongoDB', 'PostgreSQL', 'Pinecone', 'Supabase'],
+    items: ['MongoDB', 'PostgreSQL', 'Pinecone', 'SQL'],
   },
   {
     group: 'DevOps',
     items: ['Docker', 'Git', 'GitHub'],
+  },
+  {
+    group: 'Analytics',
+    items: ['Mixpanel'],
   },
 ];
 
